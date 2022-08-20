@@ -1,0 +1,50 @@
+import java.util.* ;
+class Racer {
+    String action ;
+    int runScore ;
+    int jumpScore ;
+    int crawlScore ;
+    public Racer(String action , int runScore , int jumpScore  ,int crawlScore ){
+        this.action = action ;
+        this.runScore = runScore ;
+        this.jumpScore = jumpScore ;
+        this.crawlScore = crawlScore ;
+    }
+    public String goodAt(){
+        String[] arr = this.action.split("");
+        List<String> l = Arrays.asList(arr);
+        HashMap<String , Integer > M = new HashMap<>() ;
+        for(String s : l ){
+            if(M.containsKey(s) ){
+                int c = M.get(s);
+                M.put(s , c+1);
+            }
+            else{
+                M.put(s , 1);
+            }
+        }
+        System.out.println(M.get("j"));
+        if(M.get("j") == M.get("c")){
+            return "Perfect" ;
+        }
+        else if(M.get("j") > M.get("c") ){
+            return "Jumper" ;
+        }
+        else{
+            return "Crawler" ;
+        }
+        
+    }
+}
+public class Source {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String a = sc.nextLine();
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		int o = sc.nextInt();
+		Racer r = new Racer(a, m, n, o);
+		String s = r.goodAt();
+		System.out.println(s);
+	}
+}
