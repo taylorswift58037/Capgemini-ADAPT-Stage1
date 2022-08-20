@@ -62,8 +62,8 @@ class UserID {
 public class Source {
     public static void main(String args[]) {
     	Scanner scan = new Scanner(System.in);
-		String s1 = scan.nextLine();
-		String s2 = scan.nextLine();
+	String s1 = scan.nextLine();
+	String s2 = scan.nextLine();
     	int pin = scan.nextInt();
     	int n = scan.nextInt();
     	UserID userId = new UserID();
