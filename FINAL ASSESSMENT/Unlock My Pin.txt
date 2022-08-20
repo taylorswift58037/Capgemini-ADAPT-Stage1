@@ -1,7 +1,7 @@
 import java.util.*;
 class GetCode {
 	public int getCodeThroughStrings(String str) {
-		String[] s = str.split("");
+		String[] s = str.split(" ");
 		int sum = 0;
 		for(int i=0;i<s.length;i++) {
 			sum += s[i].length();
