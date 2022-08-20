@@ -1,0 +1,72 @@
+import java.util.*;
+
+class UserID {
+	public UserID() {
+		super();
+	}
+	String stringCompare(String s1, String s2) {
+    	String smallerName = new String(), largerName = new String();
+    	if(s1.length()>s2.length()) {
+    		smallerName = s2;
+    		largerName = s1;
+    	}
+    	else if(s1.length()<s2.length()) {
+    		smallerName = s1;
+    		largerName = s2;
+    	}
+    	else {
+    		for(int i=0;i<s1.length();i++) {
+    			if((int)s1.charAt(i)<(int)s2.charAt(i)) {
+    				smallerName = s1;
+    				largerName = s2;
+    				break;
+    			}
+    			else if((int)s1.charAt(i)>(int)s2.charAt(i)) {
+    				smallerName = s2;
+    				largerName = s1;
+    				break;
+    			}
+    			else {
+    				continue;
+    			}
+    		}
+    	}
+    	return smallerName+" "+largerName;
+    }
+	String generateUserId(String firstName, String lastName, int pin, int N) {
+		String result = new String();
+		String[] arr = stringCompare(firstName,lastName).split(" ");
+		String k = String.valueOf(pin);
+    	String[] num = k.split("");
+    	int num1 = Integer.valueOf(num[N-1]);
+    	int num2 = Integer.valueOf(num[num.length-N]);
+    	String nameResult = arr[0].charAt(arr[0].length()-1)+arr[1];
+    	String numResult = num1+""+num2;
+    	char str[]=nameResult.toCharArray();
+		for(int i=0;i<str.length;i++) {
+    		if(str[i]>='A' && str[i]<='Z') { 
+    			str[i]=(char)((int)str[i]+32);
+    		}
+    		else if(str[i]>='a' && str[i]<='z') { 
+    			str[i]=(char)((int)str[i]-32);
+    		}
+		}
+		for(int i=0;i<str.length;i++) {
+			result += str[i];
+		}
+		result += numResult;
+		return result;
+	}
+}
+
+public class Source {
+    public static void main(String args[]) {
+    	Scanner scan = new Scanner(System.in);
+		String s1 = scan.nextLine();
+		String s2 = scan.nextLine();
+    	int pin = scan.nextInt();
+    	int n = scan.nextInt();
+    	UserID userId = new UserID();
+    	System.out.print(userId.generateUserId(s1, s2, pin, n));
+    }
+}
