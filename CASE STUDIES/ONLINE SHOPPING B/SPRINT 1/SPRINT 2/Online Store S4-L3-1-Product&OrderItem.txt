@@ -1,0 +1,113 @@
+class OrderItem {
+	int productId;
+	int orderId;
+	int quantity;
+	public OrderItem() {
+		super();
+	}
+	public OrderItem(int productId, int orderId, int quantity) {
+		this.productId = productId;
+		this.orderId = orderId;
+		this.quantity = quantity;
+	}
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	@Override
+	public String toString() {
+		return "OrderItem [productId=" + productId + ", orderId=" + orderId + ", quantity=" + quantity + "]";
+	}
+}
+
+class Product {
+	int productId;
+	String productName;
+	String productDescription;
+	double price;
+	int qty;
+	String category;
+	OrderItem orderitem;
+	public Product() {
+		super();
+	}
+	public Product(int productId, String productName, String productDescription, double price, int qty, String category,
+			OrderItem orderitem) {
+		this.productId = productId;
+		this.productName = productName;
+		this.productDescription = productDescription;
+		this.price = price;
+		this.qty = qty;
+		this.category = category;
+		this.orderitem = orderitem;
+	}
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getProductDescription() {
+		return productDescription;
+	}
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public int getQty() {
+		return qty;
+	}
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public OrderItem getOrderitem() {
+		return orderitem;
+	}
+	public void setOrderitem(OrderItem orderitem) {
+		this.orderitem = orderitem;
+	}
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", productDescription="
+				+ productDescription + ", price=" + price + ", qty=" + qty + ", category=" + category + ", orderitem="
+				+ orderitem ;
+	}
+}
+
+public class Source {
+	public static void main(String[] args) {
+		System.out.println(new OrderItem(501,109,1));
+		System.out.println(new Product(501,"SamsungMobile","Samsung z Series",50000,4,"Mobile",new OrderItem(501,109,1)));
+	}
+}
