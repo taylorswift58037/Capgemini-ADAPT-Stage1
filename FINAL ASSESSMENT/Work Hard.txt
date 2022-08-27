@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Employee {
+	String name;
+	String projectName;
+	int workingHrs;
+	int bonus;
+	public Employee(String name, String projectName, int workingHrs) {
+		this.name = name;
+		this.projectName = projectName;
+		this.workingHrs = workingHrs;
+		this.bonus = 0;
+	}
+	public String setBonus() {
+		String pname = this.projectName;
+		int hrs = this.workingHrs;
+		if((hrs>=30) && (pname.contains("web")||pname.contains("tech")||pname.contains("hack")||pname.contains("SD")||pname.contains("PD"))) {
+			this.bonus = hrs/10;
+			return "Congrats";
+		}
+		else {
+			return "Work hard";
+		}
+	}
+}
+
+public class Source {
+	public static void main(String[] args) {
+		Employee emp = new Employee("doselect","hack",30);
+		System.out.println(emp.setBonus());
+	}
+}
