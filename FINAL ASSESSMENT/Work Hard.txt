@@ -22,11 +22,22 @@ class Employee {
 			return "Work hard";
 		}
 	}
+	public String generateId() {
+		String str = "";
+		for(int i=0;i<this.projectName.length();i++) {
+			char ch1 = this.name.charAt(i);
+			char ch2 = this.projectName.charAt(i);
+			str = str + ch1 + ch2;
+		}
+		str = str + Integer.toString(this.workingHrs);
+		return str;
+	}
 }
 
 public class Source {
 	public static void main(String[] args) {
 		Employee emp = new Employee("doselect","hack",30);
 		System.out.println(emp.setBonus());
+		System.out.println(emp.generateId());
 	}
 }
