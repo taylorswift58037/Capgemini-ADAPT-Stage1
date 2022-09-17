@@ -1,85 +1,103 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Order {
+    int orderid;
+    String customerid;
+    String status;
+    String street;
+    String city;
+    String zip;
+    int totalAmount;
+    String orderDate;
+    String deliveryDate;
+    public Order() {
+        super();
+    }
+    public Order(int orderid,String customerid,String status,String street,String city,String zip,int totalAmount,String orderDate,String deliveryDate) {
+        this.orderid = orderid;
+        this.customerid = customerid;
+        this.status = status;
+        this.street = street;
+        this.city = city;
+        this.zip = zip;
+        this.totalAmount = totalAmount;
+        this.orderDate = orderDate;
+        this.deliveryDate = deliveryDate;
+    }
+    public void setOrderid(int orderid) {
+        this.orderid = orderid;
+    }
+    public int getOrderid() {
+        return orderid;
+    }
+    public void setCustomerid(String customerid) {
+        this.customerid = customerid;
+    }
+    public String getCustomerid() {
+        return customerid;
+    }
+    public void setDeliveryDate(String deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+    public String getDeliveryDate() {
+        return deliveryDate;
+    }
+    @Override
+    public String toString() {
+        return "Order [orderid="+orderid+", customerid="+customerid
+        +", status="+status+", street="+street+", city="+city+", zip="+zip
+        +", totalAmount="+totalAmount+", orderDate="+orderDate
+        +", deliveryDate="+deliveryDate+"]";
+    }
+}
+
 class Customer {
-	String userId;
-	String emaild;
-	String password;
-	String firstName;
-	String lastName;
-	String city;
-	String gender;
-	long phoneNumber;
-	public Customer() {
-		super();
-	}
-	public Customer(String userId, String emaild, String password, String firstName, String lastName, String city,
-			String gender, long phoneNumber) {
-		this.userId = userId;
-		this.emaild = emaild;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.city = city;
-		this.gender = gender;
-		this.phoneNumber = phoneNumber;
-	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getEmaild() {
-		return emaild;
-	}
-	public void setEmaild(String emaild) {
-		this.emaild = emaild;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public long getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(long phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	@Override
-	public String toString() {
-		return "Customer [userId=" + userId + ", emaild=" + emaild + ", password=" + password + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", city=" + city + ", gender=" + gender + ", phoneNumber="
-				+ phoneNumber + "]";
-	}
+    String userid;
+    String emaild;
+    String password;
+    String firstName;
+    String lastName;
+    String city;
+    String gender;
+    long phoneNumber;
+    public Customer() {
+        super();
+    }
+    public Customer(String userid,String emaild,String password,String firstName,String lastName,String city,String gender,long phoneNumber) {
+        this.userid = userid;
+        this.emaild = emaild;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+    }
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+    public String getUserid() {
+        return userid;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    @Override
+    public String toString() {
+        return "Customer [userid="+userid+", emaild="+emaild+", password="+password
+        +", firstName="+firstName+", lastName="+lastName+", city="+city
+        +", gender="+gender+", phoneNumber="+phoneNumber+"]";
+    }
 }
 
 public class Source {
-	public static void main(String[] args) {
-		Customer customer = new Customer("Raj109","raj@gmail.com","raj1234","Raj","Malhothra","Mumbai","Maile",777777777);
-		System.out.println(customer);
+	public static void main(String args[] ) throws Exception {
 	}
 }
