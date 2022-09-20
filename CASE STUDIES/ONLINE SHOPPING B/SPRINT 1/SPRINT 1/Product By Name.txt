@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Source {
+    String productDetails[][]=new String[5][3];
+    public Source() {
+    	productDetails[0][0]="20000";
+        productDetails[0][1]="Motorala-Z";
+    	productDetails[0][2]="Motorola";
+    	productDetails[1][0]="10600";
+    	productDetails[1][1]="SamsungA21";
+    	productDetails[1][0]="Samsung";
+    	productDetails[2][0]="40000";
+    	productDetails[2][1]="Iphone7";
+        productDetails[2][2]="Apple";
+    	productDetails[3][0]="12400";
+    	productDetails[3][1]="Nokia8.1";
+    	productDetails[3][2]="Nokia";
+    	productDetails[4][0]="10500";
+        productDetails[4][1]="Nokia6.1";
+    	productDetails[4][2]="Nokia";
+	  }
+	  public static void main(String args[] ) throws Exception {
+		  Scanner sc = new Scanner(System.in);
+		  String key = sc.nextLine();
+		  Source obj = new Source();
+		  boolean b = false;
+		  for(int i=0;i<5;i++) {
+		      if(obj.productDetails[i][1].equalsIgnoreCase(key)) {
+		          for(int j=0;j<3;j++) {
+		              System.out.println(obj.productDetails[i][j]);
+		          }
+		          b = true;
+		      }
+		  }
+		  if(!b) {
+		      System.out.println("No Record Found");
+		  }
+	  }
+}

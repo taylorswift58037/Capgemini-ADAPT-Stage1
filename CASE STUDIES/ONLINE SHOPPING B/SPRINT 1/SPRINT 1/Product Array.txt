@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Source {
+	public static void main(String args[] ) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		String[][] productArray = new String[5][3];
+		for(int i=0;i<5;i++) {
+		    for(int j=0;j<3;j++) {
+		        productArray[i][j]=sc.nextLine();
+		    }
+		}
+		int[] prices = new int[5];
+		for(int i=0;i<5;i++) {
+		    prices[i]=Integer.parseInt(productArray[i][0]);
+		}
+		Arrays.sort(prices);
+		for(int i=0;i<5;i++) {
+		    for(int j=0;j<5;j++) {
+		        if(Integer.parseInt(productArray[j][0])==prices[i]) {
+		            for(int k=0;k<3;k++) {
+		                System.out.println(productArray[j][k]);
+		            }
+		        }
+		    }
+		}
+	}
+}
